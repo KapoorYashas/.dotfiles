@@ -131,59 +131,6 @@ return {
           },
         })
       end,
-      ["dcmls"] = function()
-        lspconfig["dcmls"].setup({
-          capabilities = capabilities,
-          cmd = {
-            "dcm",
-            "start-server",
-          },
-          filetype = { "dart", "yaml" },
-          settings = {
-            dart = {
-              analysisExcludedFolders = {
-                vim.fn.expand("/opt/homebrew/"),
-                vim.fn.expand("$HOME/Flutter/"),
-                vim.fn.expand("$HOME/.pub-cache/"),
-                vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
-              },
-            },
-          },
-        })
-      end,
-
-      ["dartls"] = function()
-        lspconfig["dartls"].setup({
-          capabilities = capabilities,
-          cmd = {
-            "dart",
-            "language-server",
-            "--protocol=lsp",
-            "--port=8123",
-          },
-          filetype = { "dart" },
-          init_options = {
-            onlyAnalyzeProjectsWithOpenFiles = false,
-            suggestFromUnimportedLibraries = true,
-            closingLables = true,
-            outline = false,
-            flutterOutline = false,
-          },
-          settings = {
-            dart = {
-              analysisExcludedFolders = {
-                vim.fn.expand("/opt/homebrew/"),
-                vim.fn.expand("$HOME/Flutter/"),
-                vim.fn.expand("$HOME/.pub-cache/"),
-                vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
-              },
-              updateImportOnRename = true,
-              completeFunctionCalls = true,
-              showTodos = true,
-            },
-          },
-        })
-      end,
     })
   end,
 }
