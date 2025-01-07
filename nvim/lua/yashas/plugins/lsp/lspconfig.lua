@@ -183,8 +183,6 @@ return {
             },
           },
         })
-        require("fidget").setup({})
-        require("dart-tools")
       end,
     })
   end,
